@@ -1,0 +1,3 @@
+/Users/radoo/Desktop/lftc/lab1/lab1b/lab2/cmake-build-debug/CMakeFiles/lab2.dir
+/Users/radoo/Desktop/lftc/lab1/lab1b/lab2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/radoo/Desktop/lftc/lab1/lab1b/lab2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
