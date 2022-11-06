@@ -1,0 +1,7 @@
+{
+    Integer a, b, c
+    read a, b, c
+
+    Float average = (a + b + c) / 3
+    print "The average of a, b and c is" + average
+}

@@ -1,0 +1,18 @@
+{
+	Integer a
+	Boolean isPrime=TRUE
+	read a
+
+	for Integer i=2;i<a*2.53;i=i-1 do
+		if a%i==0 do
+			isPrime=FALSE
+			break
+		endif
+	endfor
+
+	if isPrime do
+		print "The number is prime!"
+	else do
+		print "The number is not prime!"
+	endif
+}

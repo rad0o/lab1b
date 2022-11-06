@@ -1,0 +1,17 @@
+{
+    Array arr
+    Integer n
+
+    read n
+
+    arr = Array(n)
+    for Integer i = 0; i < n; i = i + 1 do
+        read arr[i]
+    endfor
+
+    print "The numbers in reverse order are:\n
+
+    for Integer j = n - 1; j >= 0; j = j - 1 do
+        print arr[j] + "\n"
+    endfor
+}
