@@ -30,13 +30,16 @@ void Scanner::analyze(std::string &program_input, std::string &token_input) {
                     PIF.emplace_back(token, 0);
                     break;
                 case IDENTIFIER:
+                    index = symbolTable.add(token);
+                    PIF.emplace_back("id", index);
+                    break;
                 case INT_CONSTANT:
                 case STRING_CONSTANT:
                 case BOOL_CONSTANT:
                 case FLOAT_CONSTANT:
                 case CHARACTER_CONSTANT:
                     index = symbolTable.add(token);
-                    PIF.emplace_back(token, index);
+                    PIF.emplace_back("const", index);
                     break;
                 case UNCLASSIFIED:
                     std::cout << "Error on line " << lineNo << ": unclassifiable token " << token << '\n';
