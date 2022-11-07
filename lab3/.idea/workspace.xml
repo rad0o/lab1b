@@ -40,12 +40,15 @@
       <change beforePath="$PROJECT_DIR$/../lab2/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2/cmake-build-debug/cmake_install.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab2/cmake-build-debug/lab2" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2/cmake-build-debug/lab2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scanner/Scanner.h" beforeDir="false" afterPath="$PROJECT_DIR$/Scanner/Scanner.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab2.dir/Scanner/Scanner.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab2.dir/Scanner/Scanner.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab2.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab2.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/PIF.out" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/PIF.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/ST.out" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ST.out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/lab2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lab2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/p1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/p1.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +112,7 @@
       <updated>1667218757178</updated>
       <workItem from="1667218758373" duration="5637000" />
       <workItem from="1667671988077" duration="9253000" />
-      <workItem from="1667761738971" duration="1284000" />
+      <workItem from="1667761738971" duration="2620000" />
     </task>
     <servers />
   </component>

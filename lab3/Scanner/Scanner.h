@@ -30,11 +30,10 @@ private:
     SymbolTable symbolTable;
     std::vector<std::pair<std::string, int>> PIF;
     std::vector<std::string> reservedWords {"Integer", "Character", "Boolean", "String", "Float", "Array", "read", "print", "for", "endfor", "if", "endif", "do", "break", "else"};
-
     std::regex regex_operator = std::regex(R"([\+\-\/\*%=<>]|(<=)|(==)|(>=))");
     std::regex regex_separator = std::regex(R"([\{\}\[\]\(\)<>:;,])");
     std::regex regex_identifier = std::regex(R"([a-zA-Z][a-zA-Z0-9]*)");
-    std::regex regex_int_const = std::regex(R"([+-]?[0-9]+)");
+    std::regex regex_int_const = std::regex(R"([+-]?([1-9][0-9]*)|0)");
     std::regex regex_string_const = std::regex(R"("[^"]*")");
     std::regex regex_bool_const = std::regex(R"((TRUE)|(FALSE))");
     std::regex regex_float_const = std::regex(R"([+-]?[0-9]+.[0-9]+)");
