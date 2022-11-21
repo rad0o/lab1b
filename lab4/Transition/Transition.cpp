@@ -8,7 +8,7 @@
 Transition Transition::fromString(std::string str) {
     Transition transition;
 
-    std::regex char_regex(R"([a-zA-Z])");
+    std::regex char_regex(R"([a-zA-Z0-9])");
     auto it = std::sregex_iterator(str.begin(), str.end(), char_regex);
     auto end = std::sregex_iterator();
 

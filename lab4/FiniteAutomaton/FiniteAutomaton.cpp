@@ -59,33 +59,28 @@ void FiniteAutomaton::print() {
 }
 
 bool FiniteAutomaton::checkSequence(std::string sequence) {
-    if(sequence.empty()){
-        return false;
+    auto current_state = initial_state;
+
+    for(int i = 0; i < sequence.size(); i++) {
+        auto symbol = sequence.substr(i, 1);
+        current_state = getTransitionDestination(current_state, symbol);
     }
 
-    if(sequence[0] != initial_state[0]) {
+    if(!isFinalState(current_state)) {
         return false;
     }
-
-    for(int i = 0; i < sequence.size() - 1; i++) {
-        if(!existsTransition(sequence.substr(i, 1), sequence.substr(i + 1, 1)))
-            return false;
-    }
-
-    if(!isFinalState(sequence.substr(sequence.size() - 1, 1)))
-        return false;
 
     return true;
 }
-
-bool FiniteAutomaton::existsTransition(std::string state1, std::string state2) {
-    for(const auto& transition: transitions) {
-        if(transition.getState() == state1) {
-            return std::find(transition.getResultingStates().begin(), transition.getResultingStates().end(), state2) != transition.getResultingStates().end();
-        }
-    }
-}
-
 bool FiniteAutomaton::isFinalState(std::string state) {
     return std::find(final_states.begin(), final_states.end(),state) != final_states.end();
+}
+
+std::string FiniteAutomaton::getTransitionDestination(std::string state, std::string symbol) {
+    for(const auto& transition: transitions) {
+        if(transition.getState() == state && transition.getSymbol() == symbol) {
+            return transition.getResultingStates()[0];
+        }
+    }
+    return "";
 }

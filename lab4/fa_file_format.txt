@@ -1,0 +1,25 @@
+letter_cap = "A"|"B"|...|"Z"|"a"|"b"|...|"z"
+
+state = letter
+symbol = letter
+transition = "(" state "," symbol ") -> " state[state]
+
+newline = "\n"
+
+states = state[newline state]
+symbols = symbol[newline symbol]
+transitions = transition[transition]
+
+
+file_format = 
+
+states
+#
+symbols
+#
+transitions
+#
+state
+#
+state[state]
+

@@ -19,14 +19,14 @@ private:
     std::string initial_state;
     std::vector<std::string> final_states;
 
-    bool existsTransition(std::string state1, std::string state2);
+    std::string getTransitionDestination(std::string state, std::string symbol);
+    bool isFinalState(std::string state);
 
 public:
     FiniteAutomaton();
 
     void initializeFromFile(std::string filename);
     bool checkSequence(std::string sequence);
-    bool isFinalState(std::string state);
     void print();
 };
 
