@@ -4,7 +4,7 @@
 
 int main() {
     Grammar grammar;
-    std::string fname = "g2.txt";
+    std::string fname = "g1.txt";
     grammar.readFromFile(fname);
 
     auto terminals = grammar.getTerminals(), nonTerminals = grammar.getNonTerminals();
