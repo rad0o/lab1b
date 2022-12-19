@@ -64,6 +64,24 @@ build CMakeFiles/lab5.dir/Production.cpp.o: CXX_COMPILER__lab5_Debug /Users/rado
   OBJECT_DIR = CMakeFiles/lab5.dir
   OBJECT_FILE_DIR = CMakeFiles/lab5.dir
 
+build CMakeFiles/lab5.dir/DescendentRecursiveParser.cpp.o: CXX_COMPILER__lab5_Debug /Users/radoo/Desktop/lftc-labs/FLCD/lab5/DescendentRecursiveParser.cpp || cmake_object_order_depends_target_lab5
+  DEP_FILE = CMakeFiles/lab5.dir/DescendentRecursiveParser.cpp.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/lab5.dir
+  OBJECT_FILE_DIR = CMakeFiles/lab5.dir
+
+build CMakeFiles/lab5.dir/Configuration.cpp.o: CXX_COMPILER__lab5_Debug /Users/radoo/Desktop/lftc-labs/FLCD/lab5/Configuration.cpp || cmake_object_order_depends_target_lab5
+  DEP_FILE = CMakeFiles/lab5.dir/Configuration.cpp.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/lab5.dir
+  OBJECT_FILE_DIR = CMakeFiles/lab5.dir
+
+build CMakeFiles/lab5.dir/Tests/Tests.cpp.o: CXX_COMPILER__lab5_Debug /Users/radoo/Desktop/lftc-labs/FLCD/lab5/Tests/Tests.cpp || cmake_object_order_depends_target_lab5
+  DEP_FILE = CMakeFiles/lab5.dir/Tests/Tests.cpp.o.d
+  FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++14
+  OBJECT_DIR = CMakeFiles/lab5.dir
+  OBJECT_FILE_DIR = CMakeFiles/lab5.dir/Tests
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target lab5
@@ -72,7 +90,7 @@ build CMakeFiles/lab5.dir/Production.cpp.o: CXX_COMPILER__lab5_Debug /Users/rado
 #############################################
 # Link the executable lab5
 
-build lab5: CXX_EXECUTABLE_LINKER__lab5_Debug CMakeFiles/lab5.dir/main.cpp.o CMakeFiles/lab5.dir/Grammar.cpp.o CMakeFiles/lab5.dir/Production.cpp.o
+build lab5: CXX_EXECUTABLE_LINKER__lab5_Debug CMakeFiles/lab5.dir/main.cpp.o CMakeFiles/lab5.dir/Grammar.cpp.o CMakeFiles/lab5.dir/Production.cpp.o CMakeFiles/lab5.dir/DescendentRecursiveParser.cpp.o CMakeFiles/lab5.dir/Configuration.cpp.o CMakeFiles/lab5.dir/Tests/Tests.cpp.o
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
   OBJECT_DIR = CMakeFiles/lab5.dir
   POST_BUILD = :

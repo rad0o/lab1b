@@ -31,6 +31,8 @@ public:
 
     void setProductions(const std::map<std::string, std::vector<Production>> &productions);
 
+    bool isTerminal(const std::string& symbol);
+
     void readFromFile(std::string& filename);
 };
 
