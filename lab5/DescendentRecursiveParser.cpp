@@ -33,7 +33,7 @@ void DescendentRecursiveParser::advance(Configuration &config, const Grammar &gr
 
 void DescendentRecursiveParser::momentary_insuccess(Configuration &config, Grammar grammar,
                                                     const std::vector<std::string> &input) {
-    if (grammar.isTerminal(config.inputStack.top()) && config.inputStack.top() != input[config.i]) {
+    if (config.inputStack.empty() || grammar.isTerminal(config.inputStack.top()) && config.inputStack.top() != input[config.i]) {
         config.state = BACK;
     }
 }
@@ -55,6 +55,8 @@ void DescendentRecursiveParser::another_try(Configuration &config, Grammar gramm
         auto prods = grammar.getProductions();
         auto Aj = config.workingStack.top();
         config.workingStack.pop();
+
+        std::cout << config.i << " " << Aj.first << " " << Aj.second << '\n';
 
         if (Aj.second < prods[Aj.first].size() - 1) {
             config.state = NORMAL;
@@ -88,29 +90,59 @@ void DescendentRecursiveParser::success(Configuration &config, const Grammar &gr
     }
 }
 
-void DescendentRecursiveParser::parse(Configuration &config, Grammar &grammar, std::vector<std::string> &input) {
+std::string DescendentRecursiveParser::parse(Configuration &config, Grammar &grammar, std::vector<std::string> &input) {
     while (config.state != FINAL && config.state != ERROR) {
+
+        std::cout << config.state << '\n';
         if (config.state == NORMAL) {
             if (config.i == input.size() && config.inputStack.empty()) {
+                std::cout << "SUCCESS\n";
                 success(config, grammar, input);
-            } else if (!grammar.isTerminal(config.inputStack.top())) {
+            } else if (!config.inputStack.empty() && !grammar.isTerminal(config.inputStack.top())) {
+                std::cout << "EXPAND\n";
                 expand(config, grammar, input);
-            } else if (config.inputStack.top() == input[config.i]) {
+            } else if (!config.inputStack.empty() && config.inputStack.top() == input[config.i]) {
+                std::cout << "ADVANCE\n";
+
                 advance(config, grammar, input);
-            } else momentary_insuccess(config, grammar, input);
+            } else {
+                std::cout << "MOM INSUCESS\n";
+
+                momentary_insuccess(config, grammar, input);
+            }
         } else if (config.state == BACK) {
-            if(grammar.isTerminal(config.workingStack.top().first)) {
+            if(!config.workingStack.empty() && grammar.isTerminal(config.workingStack.top().first)) {
+                std::cout << "BACK\n";
                 back(config, grammar, input);
             } else {
+                std::cout << "ANOTHER TRY\n";
                 another_try(config, grammar, input);
             }
         }
     }
 
     if(config.state == ERROR) {
-        std::cout << "Error";
+        return "ERROR";
     } else {
-        std::cout << "Sequence accepted";
+        return "ACCEPTED";
     }
+}
+
+std::string DescendentRecursiveParser::build_string_of_productions(Configuration &configuration, Grammar& grammar) {
+    std::string result = "";
+
+    while(!configuration.workingStack.empty()) {
+        auto current = configuration.workingStack.top();
+        configuration.workingStack.pop();
+
+        if(grammar.isTerminal(current.first)) {
+            result = current.first + " " + result;
+        } else {
+            result = current.first + std::to_string(current.second) + " " + result;
+        }
+
+    }
+
+    return result;
 }
 

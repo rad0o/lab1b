@@ -18,7 +18,8 @@ public:
     static void back(Configuration& config, Grammar grammar, const std::vector<std::string>& input);
     static void another_try(Configuration& config, Grammar grammar, const std::vector<std::string>& input);
     static void success(Configuration& config, const Grammar& grammar, const std::vector<std::string>& input);
-    static void parse(Configuration& config, Grammar& grammar, std::vector<std::string>& input);
+    static std::string parse(Configuration& config, Grammar& grammar, std::vector<std::string>& input);
+    static std::string build_string_of_productions(Configuration& configuration, Grammar& grammar);
 };
 
 

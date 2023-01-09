@@ -1,4 +1,4 @@
-program -> compound_stm
+program -> { compound_stm }
 
 compound_stm -> stm
 compound_stm -> stm compound_stm
@@ -28,8 +28,15 @@ print_stm -> print identifier_list
 
 expression -> CONSTANT
 expression -> IDENTIFIER
+expression -> expression OPERATOR expression
+
+OPERATOR -> *
+OPERATOR -> +
+OPERATOR -> /
+OPERATOR -> %
 
 cond_stm -> if condition do compound_stm endif
+cond_stm -> if condition do compound_stm else compound_stm endif
 
 condition -> expression RELATION expression
 
